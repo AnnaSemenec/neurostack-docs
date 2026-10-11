@@ -201,7 +201,13 @@ Can work with project resources but cannot manage users or billing.
 
 Has read-only access to the workspace.
 
-The permission model follows the principle of least privilege: users should only have access to actions required for their role.
+### Permission model
+
+Workspace roles apply to all resources within the workspace, including Jupyter Servers, training jobs, model artifacts, and endpoints.
+
+NeuroStack does not support individual permission overrides for specific resources. Permissions cannot be changed for a single resource without changing the user's workspace role.
+
+This model keeps access control consistent across the workspace and avoids the need to manage permissions separately for each resource.
 
 ---
 
@@ -359,7 +365,7 @@ The following areas require additional product decisions before they can be docu
 - inference schemas;
 - monitoring metrics and alerting;
 - data management workflows;
-- security model beyond workspace roles;
+- security model beyond workspace-level RBAC (for example, organization-level roles, per-resource overrides, service accounts);
 - CI/CD integration.
 
 These items should be defined before corresponding reference or procedural documentation is treated as final.
