@@ -30,7 +30,7 @@ graph LR
 
 ## Steps
 
-1. [Create a billing account](./create-billing-account.md) — set up billing and connect a payment method.
+1. [Create-account](./.md) — set up billing and connect a payment method.
 2. [Create a workspace](./create-workspace.md) — create an isolated environment for your ML project.
 3. [Start a Jupyter Server](./start-jupyter.md) — launch a managed development environment.
 4. [Upload data](./upload-data.md) — add datasets to object storage.

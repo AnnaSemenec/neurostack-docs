@@ -1,7 +1,7 @@
 The following workflow shows the complete lifecycle of a ML-project in NeuroStack. Each step is described in detail in the following sections.
 
 ## Main steps:
-- create a billing account
+- create-account
 - create a workspace
 - start a jupyter server
 - upload a dataset

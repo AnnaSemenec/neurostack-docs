@@ -23,7 +23,7 @@ Follow the [Getting Started](../getting-started/index.md) guide to set up billin
 
 A typical ML workflow starts with a workspace, where you prepare data and develop training code in a Jupyter environment. You then run a training job, register the resulting model artifact, and deploy the model to an endpoint. Once the endpoint is available, you can send inference requests and monitor its operation.
 
-Before creating a workspace, you must create a billing account, connect a payment method, and ensure that the billing account is active.
+Before creating a workspace, you must create-account, connect a payment method, and ensure that the billing account is active.
 
 ## Explore the documentation
 

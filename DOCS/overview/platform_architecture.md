@@ -62,7 +62,7 @@ The billing account is the entry point for using paid resources. A workspace gro
 
 ## Typical workflow
 
-1. Create a billing account and connect a payment method.
+1. Create-account and connect a payment method.
 2. Create a workspace in a selected region.
 3. Start a Jupyter Server and prepare your data and training code.
 4. Run a training job.
