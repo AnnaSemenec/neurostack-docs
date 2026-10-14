@@ -1,91 +1,35 @@
-# Create-account
+# Create an account
 
-To create a workspace and use paid resources in NeuroStack, you need an active billing account.
+To start using NeuroStack, create an account and connect a payment method. A billing account with a verified payment method is required to create a workspace, including on the Free plan.
 
-This guide explains how to create-account, choose a payment method, and complete any required verification.
+## Create an account
 
-## Before you begin
+1. Go to the NeuroStack sign-up page.
+2. Enter your email address and create a password.
+3. Select **Sign up**.
+4. Check your email for a verification message.
+5. Follow the link or enter the code to verify your email address.
 
-- Sign in to the NeuroStack web console.
-- Choose one of three payment methods:
-  - **Card** — a common option for individual users and small teams.
-  - **Invoice** — for organizations that pay by bank transfer.
-  - **Internal billing code** — for organizations with a billing identifier provided by NeuroStack or their account manager.
+After verification, you are signed in to the NeuroStack web console and prompted to connect a payment method.
 
-## Create-account
+## Connect a payment method
 
-1. Sign in to the NeuroStack web console.
-2. On the main page, select **Create billing account**. You can also open **Billing** from the navigation menu.
-3. Choose a payment method.
-4. Enter the information requested for the selected method.
-5. Review the information and submit the form.
+Choose one of three payment methods:
 
-NeuroStack verifies the information according to the selected payment method. Your billing account becomes active when the required checks are complete.
+- **Card** — verified almost instantly.
+- **Invoice** — for organizations paying by bank transfer, verified within up to 5 business days.
+- **Internal billing code** — for users joining an existing corporate billing agreement, verified almost instantly.
 
-## Choose a payment method
+Fill in the form for the selected method and select **Submit**.
 
-### Card
+- If you chose **Card** or **Internal billing code**, the billing account usually becomes **Active** immediately.
+- If you chose **Invoice**, verification can take up to 5 business days. When it is complete, NeuroStack sends an email to your account email address, and the status changes to **Active**.
 
-Card is a common payment method for individual users and small teams.
+If verification fails, the billing account status changes to **Verification failed**. Check your details and try again, or choose a different payment method.
 
-1. Select **Card**.
-2. Enter your card details in the payment form.
-3. Complete any additional verification requested by the payment provider.
-4. Submit the form.
+For help with verification issues, see [Troubleshooting](../troubleshooting/index.md).
 
-NeuroStack validates the payment method. If validation succeeds and no additional checks are required, the billing account is activated automatically.
-
-If validation fails, follow the instructions displayed in the console to resolve the issue.
-
-### Invoice
-
-Invoice billing is available to organizations that pay by bank transfer. NeuroStack verifies the organization's billing information before activating invoice billing.
-
-1. Select **Invoice**.
-2. Enter the organization and billing information requested in the form.
-3. Review the information and submit the request for verification.
-
-Expected review time: up to 5 business days, provided all required information has been submitted.
-
-You can check the request status in the **Billing** section. NeuroStack also sends an email when verification is complete.
-
-If additional information is required, follow the instructions provided by NeuroStack. If your request remains under review beyond the expected time, contact support.
-
-After your organization is approved, your billing account becomes active and you can create a workspace.
-
-Invoices for platform usage have a 30-day payment term. Account verification does not mean that outstanding invoices have been paid.
-
-### Internal billing code
-
-An internal billing code is a corporate payment identifier provided by NeuroStack or your account manager. It is not a promotional code.
-
-1. Select **Internal billing code**.
-2. Enter the code provided to your organization.
-3. Submit the form.
-
-NeuroStack validates the code against its billing records. If the code is valid and authorized, the billing account is activated automatically. If the code cannot be validated, follow the instructions displayed in the console or contact your account manager.
-
-## Check your billing account status
-
-Open **Billing** in the web console to check the current status of your billing account.
-
-| Status | Description |
-|---|---|
-| Inactive | The billing account is not active for platform use. Verification may still be in progress. |
-| Active | You can create a workspace and use paid resources, subject to applicable quotas and restrictions. |
-| Suspended | A billing issue restricts the use of paid resources. |
-
-You must have an **Active** billing account before you can create a workspace.
-
-## If verification takes longer than expected
-
-If an invoice billing request remains under review for more than 5 business days:
-
-1. Open **Billing** and check the request status.
-2. Check your email for a request for additional information.
-3. If you have not received an update, contact NeuroStack support and provide the details of your request.
-
-Support can help you understand the status of your request and determine whether any further action is required.
+For details on billing statuses, billing cycles, and the internal billing code, see [Billing account](../concepts/billing-account.md).
 
 ## Next step
 
