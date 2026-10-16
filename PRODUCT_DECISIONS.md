@@ -60,44 +60,162 @@ The Getting Started path follows a complete user journey from billing setup to t
 
 ---
 
-## Billing
+## Account and Billing
 
-A billing account must be created before users can use paid platform resources.
+### Accounts and organizations
 
-A billing account must have:
+Each user has an individual NeuroStack account. Users do not share a single login for an organization.
 
-- a payment method;
-- an active billing status.
+A corporate organization has a single corporate billing account linked to a single agreement with NeuroStack. Employee accounts are linked to the corporate organization and its billing.
 
----
+Workspaces are created per project, not automatically per user. One user can work in several workspaces, and several users can participate in one workspace.
 
-### Payment Methods
+### Registration and account creation
 
-NeuroStack supports:
+The user creates a NeuroStack account with an email address and password. After sign-up, the user verifies their email address.
 
-- Card
-- Invoice
-- Internal billing code
+Email verification codes are valid for 10 minutes, are one-time use, and allow a maximum of five incorrect attempts. Requesting a new code invalidates the previous one. Rate limits apply to code requests.
 
-An internal billing code is a corporate payment identifier provided by NeuroStack or an account manager. It is not a promotional code.
+After email verification, the user is prompted to complete a billing setup.
 
-Invoices are intended for organizations. The organization pays the invoice by bank transfer.
+A completed billing setup is required to create a workspace, including on the Free plan. The Free plan does not incur usage charges.
 
----
+### Billing setup
 
-### Billing Statuses
+A billing setup connects a user account or organization to a billing arrangement. NeuroStack supports three billing arrangements:
 
-A billing account can have the following statuses:
+- **Card** — a personal or corporate card validated through the payment provider.
+- **Invoice** — for organizations paying by bank transfer.
+- **Internal billing code** — a corporate identifier that links a user account to an existing corporate billing agreement.
 
-- **Inactive** — the billing account exists but is not active for platform use;
-- **Active** — the account can be used to create workspaces and paid resources;
-- **Suspended** — the account has outstanding billing issues and is restricted.
+An internal billing code is not a payment method. It links the user to an existing corporate billing arrangement; charges are billed to the organization under the corporate agreement.
 
-An unpaid invoice can result in account suspension.
+### Billing cycle
 
-A suspended account has a seven-day grace period for already-running resources. During suspension, users cannot create new paid resources. After the grace period, running resources are stopped.
+Usage is billed every 30 days where applicable. The Free plan does not incur usage charges.
 
-After the outstanding debt is paid, the billing account returns to Active.
+- **Card** — charges are billed automatically to the card.
+- **Invoice** — invoices are issued once every 30 days and paid by bank transfer.
+- **Internal billing code** — charges are billed to the organization under the corporate agreement, using the same 30-day invoice cycle.
+
+Account activation does not depend on whether any charges have been paid.
+
+### Billing account statuses
+
+The following statuses apply to a billing account:
+
+| Status | When used | What is available |
+|---|---|---|
+| Pending | The billing setup has not passed initial verification yet. | Workspace creation is not available. |
+| Failed | Verification of the billing setup has finally failed. | The user must correct the details or choose a different billing arrangement. |
+| Active | Verification has passed and there is no overdue debt. | The user can create workspaces and use paid resources. |
+| Payment overdue | The payment due date has passed and payment has not been received. | New paid resources cannot be created. Existing resources continue to run during the grace period. |
+| Suspended | The grace period has ended without payment. | Paid resources are unavailable; running resources are stopped. |
+
+If a user resubmits corrected details after a `Failed` status, the billing account returns to `Pending` until verification is complete.
+
+`Payment overdue` is set when the payment due date has passed and payment has not been received. During the seven-day grace period, users cannot create new paid resources, but existing resources continue to run.
+
+When the grace period ends without payment, the account transitions to `Suspended` and running resources are stopped.
+
+After payment is received, the billing account returns to **Active**. Stopped resources are not restarted automatically; the user receives a notification and starts the required resources manually.
+
+For card payments in `Payment overdue` status, NeuroStack retries the charge automatically. The user receives a notification about the failed charge and the date when resources may be stopped.
+
+A failed recurring charge is an event within the `Payment overdue` state, not a status change to `Failed`.
+
+### Corporate billing status and user access
+
+Billing account statuses describe the billing account, not the individual user account.
+
+If a corporate billing account is in `Payment overdue` or `Suspended`, linked employees cannot create new paid resources, even if they have no personal debt. The user interface shows the state of the corporate billing to affected users.
+
+The personal account status of an employee is not automatically changed to `Payment overdue` when the debt belongs to the organization.
+
+### Card verification
+
+Card details are validated through the payment provider. Verification is usually immediate.
+
+If validation fails, the billing account status changes to **Failed**. The user sees a general message and can correct the card details and retry, or choose a different billing arrangement. NeuroStack does not display detailed bank decline reasons.
+
+### Invoice verification
+
+Invoice verification can take up to 5 business days, provided all required information has been submitted.
+
+The invoice request form collects:
+
+- Legal business name (required);
+- Country of registration (required);
+- Registered business address (required);
+- Bill-to address (required if different);
+- Business contact name (required);
+- Business contact email (required);
+- Accounts payable email (required);
+- Tax ID / VAT ID (required depending on the country);
+- Company registration number (required depending on the country);
+- Purchase order number (optional);
+- Supporting documents (requested only if needed for verification).
+
+When verification is complete, NeuroStack sends an email to the account email address, and the status changes to **Active**.
+
+### Internal billing code
+
+An internal billing code links a user account to an existing corporate billing agreement with NeuroStack. It is issued to an organization by NeuroStack or the organization's account manager. It is not a promotional code.
+
+The code is a means of initial connection to the organization, not a password for each sign-in. After connecting, the user signs in normally.
+
+The code is bound to the organization's email domain. To use the code, the user must provide a work email address on the associated domain.
+
+Connection flow:
+
+1. The NeuroStack account manager creates the corporate billing account and issues the code to the company.
+2. The company designates an authorized billing owner for the corporate billing account.
+3. The company shares the code with employees who are allowed to connect.
+4. The employee signs up or signs in to their individual NeuroStack account.
+5. If the corporate email address is not verified yet, the employee verifies it.
+6. The employee enters the corporate code.
+7. NeuroStack validates the code and checks that the email domain matches the domain associated with the code.
+8. The user account is linked to the corporate organization and its billing.
+
+If the account email address does not match the domain associated with the code, the user must provide and verify a corporate email address.
+
+The billing owner of the corporate billing account is designated by the company when the corporate billing account is created. The first user to activate the code does not automatically become the billing owner.
+
+For reliability, the organization should designate a second billing administrator or a recovery procedure for billing access.
+
+### Revoking access and rotating the code
+
+Revoking an individual employee's access and rotating the corporate code are separate operations.
+
+**Revoking an employee's access:**
+
+- The organization removes the employee's account from the corporate organization.
+- Access to corporate resources is revoked immediately.
+- Revoking access does not delete the employee's personal NeuroStack account.
+- Other employees continue to work.
+- The corporate code remains valid.
+- The system revokes the user's membership, permissions, and, if necessary, active sessions and tokens.
+
+**Rotating the code:**
+
+Rotating the code is used when the code may have been compromised, shared outside the organization, or as part of planned access rotation.
+
+When the code is rotated:
+
+- The old code immediately stops working for new connections.
+- A new code is issued to an authorized representative of the organization.
+- Existing user links and active sessions are preserved.
+- If the organization wants to remove specific employees, it does so separately.
+
+Rotating the code does not automatically disconnect all existing employees.
+
+### Billing notifications
+
+For corporate billing, a billing contact or accounts payable contact is designated when the corporate billing account is set up. Payment notifications are sent to this contact.
+
+If the designated contact is no longer available, the organization updates the billing contact in the corporate billing account settings.
+
+The status of the corporate billing is shown to all linked users affected by its restrictions.
 
 ---
 
