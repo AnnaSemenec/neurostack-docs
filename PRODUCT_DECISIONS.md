@@ -140,16 +140,6 @@ A billing setup connects a user account or organization to a billing arrangement
 
 An internal billing code is not a payment method. It links the user to an existing corporate billing arrangement; charges are billed to the organization under the corporate agreement.
 
-### Billing cycle
-
-The billing cycle for an individual paid plan begins when the billing account becomes Active and repeats every 30 days. Charges are collected according to the selected billing arrangement. The Free plan does not incur usage charges.
-
-- **Card** — charges are billed automatically to the card.
-- **Invoice** — invoices are issued once every 30 days and paid by bank transfer.
-- **Internal billing code** — charges are billed to the organization under the corporate agreement, using the same 30-day invoice cycle.
-
-Invoices are due within 30 days of issuance. Account activation does not depend on whether any charges have been paid.
-
 ### Billing account statuses
 
 The following statuses apply to a billing account:
@@ -165,6 +155,14 @@ The following statuses apply to a billing account:
 ### Billing cycle and grace period
 
 The billing cycle for an individual paid plan begins when the billing account becomes Active and repeats every 30 days.
+
+Charges are collected according to the selected billing arrangement:
+
+- **Card** — charges are billed automatically to the card.
+- **Invoice** — invoices are issued once every 30 days and paid by bank transfer.
+- **Internal billing code** — charges are billed to the organization under the corporate agreement, using the same 30-day invoice cycle.
+
+Invoices are due within 30 days of issuance. Account activation does not depend on whether any charges have been paid.
 
 **Card payments**
 
