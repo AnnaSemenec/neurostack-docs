@@ -104,7 +104,7 @@ The Getting Started path follows a complete user journey from billing setup to t
 
 Each user has an individual NeuroStack account. Users do not share a single login for an organization.
 
-A corporate organization has a single corporate billing account linked to a single agreement with NeuroStack. Employee accounts are linked to the corporate organization and its billing.
+A corporate organization has a single corporate billing arrangement linked to a single agreement with NeuroStack. Employee accounts are linked to the corporate organization and its billing.
 
 Workspaces are created per project, not automatically per user. One user can work in several workspaces, and several users can participate in one workspace.
 
@@ -126,7 +126,7 @@ The next steps depend on the selected plan:
 - **Free:** After email verification, the user can create a workspace within Free plan limits. No payment method or billing verification is required.
 - **Standard and Pro:** The user must complete the required billing setup and pass billing verification before creating a workspace.
 - **Enterprise — new corporate agreement:** The user contacts the sales team and works with an account manager to establish the corporate agreement and billing arrangement.
-- **Enterprise — existing corporate agreement:** The user follows the flow for joining an existing corporate agreement. The account is linked to the organization's corporate billing account after the internal billing code and corporate email are validated.
+- **Enterprise — existing corporate agreement:** The user follows the flow for joining an existing corporate agreement. The account is linked to the organization's corporate billing after the internal billing code and corporate email are validated.
 
 Selecting a plan does not by itself activate a paid subscription or authorize the creation of paid resources.
 
@@ -140,9 +140,9 @@ A billing setup connects a user account or organization to a billing arrangement
 
 An internal billing code is not a payment method. It links the user to an existing corporate billing arrangement; charges are billed to the organization under the corporate agreement.
 
-### Billing account statuses
+### Billing statuses
 
-The following statuses apply to a billing account:
+The following statuses apply to billing:
 
 | Status | When used | What is available |
 |---|---|---|
@@ -154,7 +154,7 @@ The following statuses apply to a billing account:
 
 ### Billing cycle and grace period
 
-The billing cycle for an individual paid plan begins when the billing account becomes Active and repeats every 30 days.
+The billing cycle for an individual paid plan begins when the billing status becomes Active and repeats every 30 days.
 
 Charges are collected according to the selected billing arrangement:
 
@@ -166,25 +166,25 @@ Invoices are due within 30 days of issuance. Account activation does not depend 
 
 **Card payments**
 
-NeuroStack attempts to charge the card on each billing date. If the first charge attempt fails, the billing account transitions to `Payment overdue` and a seven-day grace period begins, measured from the date of the first failed charge attempt.
+NeuroStack attempts to charge the card on each billing date. If the first charge attempt fails, the billing status transitions to `Payment overdue` and a seven-day grace period begins, measured from the date of the first failed charge attempt.
 
 During the grace period, NeuroStack automatically retries the charge. The user is notified that payment is overdue and shown the date when resources will be stopped if payment is not received.
 
-If payment is received during the grace period, the billing account returns to `Active`. Existing resources continue to run without interruption.
+If payment is received during the grace period, the billing status returns to `Active`. Existing resources continue to run without interruption.
 
-If payment is not received by the end of the grace period, the billing account transitions to `Suspended`, and running resources are stopped.
+If payment is not received by the end of the grace period, the billing status transitions to `Suspended`, and running resources are stopped.
 
 **Invoice payments**
 
-Each invoice has a specified payment due date. If payment has not been received by that date, the billing account transitions to `Payment overdue`, and a seven-day grace period begins.
+Each invoice has a specified payment due date. If payment has not been received by that date, the billing status transitions to `Payment overdue`, and a seven-day grace period begins.
 
 During the grace period, existing resources continue to run, but users cannot create new paid resources. NeuroStack notifies the billing contact of the overdue invoice and the date when resources will be stopped if payment is not received.
 
-If payment is received during the grace period, the billing account returns to `Active`. Existing resources continue to run without interruption.
+If payment is received during the grace period, the billing status returns to `Active`. Existing resources continue to run without interruption.
 
-If payment is not received by the end of the grace period, the billing account transitions to `Suspended`, and running resources are stopped.
+If payment is not received by the end of the grace period, the billing status transitions to `Suspended`, and running resources are stopped.
 
-If payment is received after the billing account has transitioned to `Suspended`, the billing account returns to `Active`. Stopped resources are not restarted automatically; the user must start the required resources manually.
+If payment is received after the billing status has transitioned to `Suspended`, the billing status returns to `Active`. Stopped resources are not restarted automatically; the user must start the required resources manually.
 
 A failed recurring charge is an event within the `Payment overdue` state, not a status change to `Failed`.
 
@@ -194,9 +194,9 @@ Selecting a plan does not start a billing cycle. The Free plan has no paid billi
 
 ### Corporate billing status and user access
 
-Billing account statuses describe the billing account, not the individual user account.
+Billing statuses describe the organization's billing, not the individual user account.
 
-If a corporate billing account is in `Payment overdue` or `Suspended`, linked employees cannot create new paid resources, even if they have no personal debt. The user interface shows the state of the corporate billing to affected users.
+If the organization's billing is in `Payment overdue` or `Suspended`, linked employees cannot create new paid resources, even if they have no personal debt. The user interface shows the state of the corporate billing to affected users.
 
 The personal account status of an employee is not automatically changed to `Payment overdue` when the debt belongs to the organization.
 
@@ -204,7 +204,7 @@ The personal account status of an employee is not automatically changed to `Paym
 
 Card details are validated through the payment provider. Verification is usually immediate.
 
-If validation fails, the billing account status changes to **Failed**. The user sees a general message and can correct the card details and retry, or choose a different billing arrangement. NeuroStack does not display detailed bank decline reasons.
+If validation fails, the billing status changes to **Failed**. The user sees a general message and can correct the card details and retry, or choose a different billing arrangement. NeuroStack does not display detailed bank decline reasons.
 
 ### Invoice verification
 
@@ -242,7 +242,7 @@ The code is used during the initial connection to the corporate agreement, not a
 4. The user provides and verifies a corporate email address if it has not already been verified.
 5. The user enters the internal billing code.
 6. NeuroStack validates the code and checks that the corporate email domain matches the organization associated with the code.
-7. If validation succeeds, NeuroStack links the user's account to the organization's corporate billing account.
+7. If validation succeeds, NeuroStack links the user's account to the organization's corporate billing.
 8. The user can access the workspaces and resources permitted by their organization and assigned workspace roles.
 
 If the account's existing email address does not match the organization's corporate email domain, the user must provide and verify a matching corporate email address before the account can be linked.
@@ -291,9 +291,9 @@ Organizations cannot block a former employee from using NeuroStack entirely; the
 
 ### Billing notifications
 
-For corporate billing, a billing contact or accounts payable contact is designated when the corporate billing account is set up. Payment notifications are sent to this contact.
+For corporate billing, a billing contact or accounts payable contact is designated when the corporate billing is set up. Payment notifications are sent to this contact.
 
-If the designated contact is no longer available, the organization updates the billing contact in the corporate billing account settings.
+If the designated contact is no longer available, the organization updates the billing contact in the corporate billing settings.
 
 The status of the corporate billing is shown to all linked users affected by its restrictions.
 

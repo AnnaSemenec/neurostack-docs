@@ -83,9 +83,9 @@ If you selected Enterprise, choose one of the following options:
 
 You do not need to add a personal payment method or select an individual billing arrangement. Questions about invoices, deposits, or other payment arrangements within your company are handled by your organization, not by NeuroStack.
 
-## Billing account statuses
+## Billing statuses
 
-The following statuses apply to a billing account:
+The following statuses apply to billing:
 
 | Status | When used | What is available |
 |---|---|---|
@@ -97,8 +97,8 @@ The following statuses apply to a billing account:
 
 ## Learn more
 
-- For more details about billing arrangements and billing account statuses, see [Billing account](../concepts/billing-account.md).
-- For help with account creation, billing, and billing account statuses, see [Billing issues](../troubleshooting/billing-issues.md).
+- For more details about billing arrangements and billing statuses, see [Billing](../concepts/billing.md).
+- For help with account creation, billing, and billing statuses, see [Billing errors](../troubleshooting/billing-errors.md).
 
 ## What's next
 
