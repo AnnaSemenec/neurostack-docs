@@ -10,7 +10,6 @@ Before you begin, make sure you have:
 
 - A NeuroStack account with access to the Web Console.
 - A payment method or internal billing code.
-- Permission to create billing accounts and workspaces.
 
 See [Prerequisites](./prerequisites.md) for details.
 
@@ -18,7 +17,7 @@ See [Prerequisites](./prerequisites.md) for details.
 
 ```mermaid
 graph LR
-    A[Create billing account] --> B[Create workspace]
+    A[Create account] --> B[Create workspace]
     B --> C[Start Jupyter Server]
     C --> D[Upload data]
     D --> E[Prepare training code]
@@ -30,7 +29,7 @@ graph LR
 
 ## Steps
 
-1. [Create-account](./.md) — set up billing and connect a payment method.
+1. [Create-account](./.md) — set up billing.
 2. [Create a workspace](./create-workspace.md) — create an isolated environment for your ML project.
 3. [Start a Jupyter Server](./start-jupyter.md) — launch a managed development environment.
 4. [Upload data](./upload-data.md) — add datasets to object storage.

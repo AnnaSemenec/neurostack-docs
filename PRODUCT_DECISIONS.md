@@ -30,6 +30,44 @@ NeuroStack is documented as a cloud product rather than as a generic collection 
 
 ---
 
+## Plan Selection and Entry Point
+
+The Pricing page is the entry point to the NeuroStack user journey. It presents the available plans side by side, including their prices and limits where defined.
+
+Each plan has a "Choose plan" button. Selecting a plan determines the next steps in the user journey.
+
+### Free Plan
+
+1. The user selects Free.
+2. The user creates an account and verifies their email address.
+3. The user can create a workspace within Free plan limits.
+
+The Free plan does not require a payment method or billing verification.
+
+### Standard and Pro Plans
+
+1. The user selects Standard or Pro.
+2. The user creates an account and verifies their email address.
+3. The user selects a billing arrangement and completes the required billing setup.
+4. NeuroStack verifies the billing details.
+5. Once the billing account is Active, the user can create workspaces within the selected plan's limits.
+
+### Enterprise Plan
+
+After selecting Enterprise, the user is shown an intermediate screen with two options:
+
+- **Set up a new corporate agreement**
+- **Join an existing corporate agreement**
+
+The user must choose one of these options before proceeding. The first option leads to the sales contact flow; the second leads to the existing corporate agreement connection flow.
+
+- **Set up a new corporate agreement** — for an organization that wants to establish a new corporate agreement with NeuroStack. The user contacts NeuroStack's sales team and works with an account manager to arrange the agreement and billing setup.
+- **Join an existing corporate agreement** — for an employee whose organization already has an active NeuroStack corporate agreement. The user follows the corporate account connection flow using a corporate email address and an internal billing code.
+
+Employees joining an existing corporate agreement do not select an individual payment method or become personally responsible for corporate charges.
+
+---
+
 ## Documentation Model
 
 The documentation follows a Docs-as-Code approach.
@@ -70,15 +108,27 @@ A corporate organization has a single corporate billing account linked to a sing
 
 Workspaces are created per project, not automatically per user. One user can work in several workspaces, and several users can participate in one workspace.
 
-### Registration and account creation
+### Registration
 
-The user creates a NeuroStack account with an email address and password. After sign-up, the user verifies their email address.
+Users select a plan on the Pricing page before creating an account.
 
-Email verification codes are valid for 10 minutes, are one-time use, and allow a maximum of five incorrect attempts. Requesting a new code invalidates the previous one. Rate limits apply to code requests.
+After selecting a plan, the user creates an individual NeuroStack account using an email address and password, then verifies the email address.
 
-After email verification, the user is prompted to complete a billing setup.
+Email verification codes:
 
-A completed billing setup is required to create a workspace, including on the Free plan. The Free plan does not incur usage charges.
+- Are valid for 10 minutes.
+- Can be used only once.
+- Allow a maximum of 5 incorrect attempts.
+- Are invalidated when a new code is requested.
+
+The next steps depend on the selected plan:
+
+- **Free:** After email verification, the user can create a workspace within Free plan limits. No payment method or billing verification is required.
+- **Standard and Pro:** The user must complete the required billing setup and pass billing verification before creating a workspace.
+- **Enterprise — new corporate agreement:** The user contacts the sales team and works with an account manager to establish the corporate agreement and billing arrangement.
+- **Enterprise — existing corporate agreement:** The user follows the flow for joining an existing corporate agreement. The account is linked to the organization's corporate billing account after the internal billing code and corporate email are validated.
+
+Selecting a plan does not by itself activate a paid subscription or authorize the creation of paid resources.
 
 ### Billing setup
 
@@ -92,13 +142,13 @@ An internal billing code is not a payment method. It links the user to an existi
 
 ### Billing cycle
 
-Usage is billed every 30 days where applicable. The Free plan does not incur usage charges.
+The billing cycle for an individual paid plan begins when the billing account becomes Active and repeats every 30 days. Charges are collected according to the selected billing arrangement. The Free plan does not incur usage charges.
 
 - **Card** — charges are billed automatically to the card.
 - **Invoice** — invoices are issued once every 30 days and paid by bank transfer.
 - **Internal billing code** — charges are billed to the organization under the corporate agreement, using the same 30-day invoice cycle.
 
-Account activation does not depend on whether any charges have been paid.
+Invoices are due within 30 days of issuance. Account activation does not depend on whether any charges have been paid.
 
 ### Billing account statuses
 
@@ -106,23 +156,43 @@ The following statuses apply to a billing account:
 
 | Status | When used | What is available |
 |---|---|---|
-| Pending | The billing setup has not passed initial verification yet. | Workspace creation is not available. |
+| Pending | A paid-plan billing setup has been submitted but has not yet passed initial verification. | Workspace creation is unavailable until verification is complete. |
 | Failed | Verification of the billing setup has finally failed. | The user must correct the details or choose a different billing arrangement. |
 | Active | Verification has passed and there is no overdue debt. | The user can create workspaces and use paid resources. |
 | Payment overdue | The payment due date has passed and payment has not been received. | New paid resources cannot be created. Existing resources continue to run during the grace period. |
 | Suspended | The grace period has ended without payment. | Paid resources are unavailable; running resources are stopped. |
 
-If a user resubmits corrected details after a `Failed` status, the billing account returns to `Pending` until verification is complete.
+### Billing cycle and grace period
 
-`Payment overdue` is set when the payment due date has passed and payment has not been received. During the seven-day grace period, users cannot create new paid resources, but existing resources continue to run.
+The billing cycle for an individual paid plan begins when the billing account becomes Active and repeats every 30 days.
 
-When the grace period ends without payment, the account transitions to `Suspended` and running resources are stopped.
+**Card payments**
 
-After payment is received, the billing account returns to **Active**. Stopped resources are not restarted automatically; the user receives a notification and starts the required resources manually.
+NeuroStack attempts to charge the card on each billing date. If the first charge attempt fails, the billing account transitions to `Payment overdue` and a seven-day grace period begins, measured from the date of the first failed charge attempt.
 
-For card payments in `Payment overdue` status, NeuroStack retries the charge automatically. The user receives a notification about the failed charge and the date when resources may be stopped.
+During the grace period, NeuroStack automatically retries the charge. The user is notified that payment is overdue and shown the date when resources will be stopped if payment is not received.
+
+If payment is received during the grace period, the billing account returns to `Active`. Existing resources continue to run without interruption.
+
+If payment is not received by the end of the grace period, the billing account transitions to `Suspended`, and running resources are stopped.
+
+**Invoice payments**
+
+Each invoice has a specified payment due date. If payment has not been received by that date, the billing account transitions to `Payment overdue`, and a seven-day grace period begins.
+
+During the grace period, existing resources continue to run, but users cannot create new paid resources. NeuroStack notifies the billing contact of the overdue invoice and the date when resources will be stopped if payment is not received.
+
+If payment is received during the grace period, the billing account returns to `Active`. Existing resources continue to run without interruption.
+
+If payment is not received by the end of the grace period, the billing account transitions to `Suspended`, and running resources are stopped.
+
+If payment is received after the billing account has transitioned to `Suspended`, the billing account returns to `Active`. Stopped resources are not restarted automatically; the user must start the required resources manually.
 
 A failed recurring charge is an event within the `Payment overdue` state, not a status change to `Failed`.
+
+For Enterprise, the billing cycle is established at the corporate agreement level. Adding an employee to an existing corporate agreement does not start or reset the organization's billing cycle.
+
+Selecting a plan does not start a billing cycle. The Free plan has no paid billing cycle and does not incur usage charges.
 
 ### Corporate billing status and user access
 
@@ -140,7 +210,7 @@ If validation fails, the billing account status changes to **Failed**. The user 
 
 ### Invoice verification
 
-Invoice verification can take up to 5 business days, provided all required information has been submitted.
+Invoice verification can take up to 5 business days, provided all required information has been submitted. If additional information or supporting documents are required, NeuroStack contacts the applicant by email. Verification may take longer than five business days if the requested information has not yet been received. The verification process resumes when the applicant provides the required information.
 
 The invoice request form collects:
 
@@ -160,28 +230,30 @@ When verification is complete, NeuroStack sends an email to the account email ad
 
 ### Internal billing code
 
-An internal billing code links a user account to an existing corporate billing agreement with NeuroStack. It is issued to an organization by NeuroStack or the organization's account manager. It is not a promotional code.
+An internal billing code connects an employee's NeuroStack account to an existing corporate billing agreement. It is issued by NeuroStack or an authorized account manager and is not a payment method or promotional code.
 
-The code is a means of initial connection to the organization, not a password for each sign-in. After connecting, the user signs in normally.
+Employees joining an existing corporate agreement do not need to establish an individual billing arrangement. Charges for their use of NeuroStack are handled under the organization's corporate agreement.
 
-The code is bound to the organization's email domain. To use the code, the user must provide a work email address on the associated domain.
+The code is used during the initial connection to the corporate agreement, not at every login.
 
-Connection flow:
+#### Joining an existing corporate agreement
 
-1. The NeuroStack account manager creates the corporate billing account and issues the code to the company.
-2. The company designates an authorized billing owner for the corporate billing account.
-3. The company shares the code with employees who are allowed to connect.
-4. The employee signs up or signs in to their individual NeuroStack account.
-5. If the corporate email address is not verified yet, the employee verifies it.
-6. The employee enters the corporate code.
-7. NeuroStack validates the code and checks that the email domain matches the domain associated with the code.
-8. The user account is linked to the corporate organization and its billing.
+1. The user selects Enterprise on the Pricing page.
+2. The user selects "Join an existing corporate agreement."
+3. If the user does not have a NeuroStack account, they create one. If they already have an account, they sign in.
+4. The user provides and verifies a corporate email address if it has not already been verified.
+5. The user enters the internal billing code.
+6. NeuroStack validates the code and checks that the corporate email domain matches the organization associated with the code.
+7. If validation succeeds, NeuroStack links the user's account to the organization's corporate billing account.
+8. The user can access the workspaces and resources permitted by their organization and assigned workspace roles.
 
-If the account email address does not match the domain associated with the code, the user must provide and verify a corporate email address.
+If the account's existing email address does not match the organization's corporate email domain, the user must provide and verify a matching corporate email address before the account can be linked.
 
-The billing owner of the corporate billing account is designated by the company when the corporate billing account is created. The first user to activate the code does not automatically become the billing owner.
+If the code is invalid, expired, revoked, or does not match the corporate email domain, the account is not linked. The user is shown an error and can correct the details or contact their organization's authorized representative.
 
-For reliability, the organization should designate a second billing administrator or a recovery procedure for billing access.
+Joining a corporate agreement does not create an individual subscription, require the employee to provide a personal payment method, or make the employee personally responsible for corporate charges.
+
+The organization's corporate billing status and agreement terms determine whether linked users can create or use paid resources.
 
 ### Revoking access and rotating the code
 
@@ -208,6 +280,16 @@ When the code is rotated:
 - If the organization wants to remove specific employees, it does so separately.
 
 Rotating the code does not automatically disconnect all existing employees.
+
+### Offboarding from a corporate organization
+
+When a user attempts to sign in to a corporate account after their corporate access has been revoked, NeuroStack informs them that their corporate access has been removed and offers to create a personal account using a personal email address.
+
+The former corporate account is no longer available to the user. Corporate workspaces, data, and artifacts remain with the organization and are not transferred to the new personal account.
+
+After creating a personal account and completing the standard billing setup, the user can start using NeuroStack with the Free plan.
+
+Organizations cannot block a former employee from using NeuroStack entirely; they can only revoke the employee's access to their corporate organization and resources.
 
 ### Billing notifications
 
@@ -237,7 +319,11 @@ A workspace can be created through:
 - CLI;
 - REST API.
 
-Billing must be active before a workspace can be created.
+Workspace creation eligibility depends on the user's plan and billing status:
+
+- **Free:** A user with a verified email address can create a workspace within Free plan limits without setting up paid billing.
+- **Standard and Pro:** The user's billing account must be Active before a workspace can be created.
+- **Enterprise:** The user's account must be linked to the organization's corporate billing account, and the organization must permit workspace creation under its agreement and access policies.
 
 ---
 
@@ -468,7 +554,7 @@ Exact API endpoints, authentication mechanisms, CLI commands, rate limits, and r
 
 The following areas require additional product decisions before they can be documented in detail:
 
-- exact pricing and billing rates;
+- exact pricing rates;
 - complete quota model;
 - supported regions;
 - complete compute configuration list;
