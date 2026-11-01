@@ -21,13 +21,9 @@ NeuroStack is a cloud platform that enables data scientists and ML engineers to:
 
 ## Documentation
 
-- [Overview](docs/overview/index.md) — platform overview, architecture, and resource hierarchy
-- [Getting Started](docs/getting_started/index.md) — step-by-step onboarding from billing setup to your first model inference
-- [Concepts](docs/concepts.md) — deep dives into workspace, Jupyter, training jobs, models, and endpoints
-- [How-to Guides](docs/how_to_guides.md) — quick answers for specific tasks like uploading data or deploying a model
-- [Reference](docs/api_reference.md) — API endpoints, CLI commands, quotas, and error codes
-- [Troubleshooting](docs/troubleshooting.md) — fix common errors in billing, workspace, Jupyter, training, and deployment
-- [FAQ](docs/faq/faq.md) — quick answers to frequently asked questions
+- [Overview](DOCS/overview/index.md) — platform overview, architecture, and resource hierarchy
+- [Getting Started](DOCS/getting_started/index.md) — step-by-step onboarding from billing setup to your first model inference
+- [Concepts](DOCS/concepts.md) — deep dives into workspace, Jupyter, training jobs, models, and endpoints
 
 ---
 
