@@ -38,8 +38,6 @@ Employees joining an existing corporate agreement do not need to establish an in
 
 The code is used during the initial connection to the corporate agreement, not at every login.
 
-For the connection flow, error handling, and managing employee access or rotating the code, see [Access and permissions](../concepts/access-and-permissions.md).
-
 ## Billing statuses
 
 The following statuses apply to billing:
@@ -88,5 +86,4 @@ A failed recurring charge is an event within the Payment overdue state, not a st
 
 ## Related docs
 
-- [Create account](../getting-started/create-account.md)
-- [Billing errors](../troubleshooting/billing-errors.md)
+- [Create account](../getting_started/create_account.md)

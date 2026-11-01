@@ -4,7 +4,6 @@ Concepts explain how NeuroStack works and how its main components relate to each
 
 ## Covered
 
-- [Index](index.md)
 - [Billing](billing.md)
 
 ## Planned
