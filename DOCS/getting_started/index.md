@@ -12,8 +12,6 @@ Before you begin, make sure you have:
 - A payment card or invoice details, if you plan to use a paid plan.
 - An internal billing code from your organization, if your company pays for NeuroStack.
 
-See [Prerequisites](./prerequisites.md) for details.
-
 ## Workflow overview
 
 ```mermaid
@@ -32,7 +30,7 @@ graph LR
 
 ### Covered
 
-- [Create account](./create-account.md)
+- [Create account](./create_account.md)
 
 ## After you finish
 
@@ -40,4 +38,4 @@ Once you complete all steps, you will have a working ML workflow: a trained mode
 
 To learn more about individual platform resources and concepts, see [Concepts](../concepts/index.md).
 
-If you run into problems, see [Troubleshooting](../troubleshooting/index.md).
+If you run into problems, see Troubleshooting.
