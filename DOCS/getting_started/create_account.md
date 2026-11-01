@@ -98,9 +98,8 @@ The following statuses apply to billing:
 ## Learn more
 
 - For more details about billing arrangements and billing statuses, see [Billing](../concepts/billing.md).
-- For help with account creation, billing, and billing statuses, see [Billing errors](../troubleshooting/billing-errors.md).
 
 ## What's next
 
-- [Create a Workspace](create-workspace.md)
-- [Start a Jupyter Server](start-jupyter.md)
+- Create a Workspace
+- Start a Jupyter Server
