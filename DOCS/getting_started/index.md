@@ -1,6 +1,6 @@
 # Getting started
 
-This section helps you start working with NeuroStack: from choosing a plan to running your first inference request.
+This section helps you start working with NeuroStack: from creating an account to running your first inference request.
 
 Follow the steps in order. Each step builds on the previous one and results in a working part of your ML workflow.
 
@@ -18,29 +18,21 @@ See [Prerequisites](./prerequisites.md) for details.
 
 ```mermaid
 graph LR
-    A[Choose a plan] --> B[Create account]
-    B --> C[Create workspace]
-    C --> D[Start Jupyter Server]
-    D --> E[Upload data]
-    E --> F[Prepare training code]
-    F --> G[Run training job]
-    G --> H[Register artifact]
-    H --> I[Deploy model]
-    I --> J[Run inference]
+    A[Create account] --> B[Create workspace]
+    B --> C[Start Jupyter Server]
+    C --> D[Upload data]
+    D --> E[Prepare training code]
+    E --> F[Run training job]
+    F --> G[Register artifact]
+    G --> H[Deploy model]
+    H --> I[Run inference]
+
+    click A "./create-account.md"
 ```
 
-## Steps
+### Covered
 
-1. [Choose a plan](./choose-plan.md) — select the plan that fits your needs.
-2. [Create account](./create-account.md) — create your account and complete billing setup, if required by your plan.
-3. [Create a workspace](./create-workspace.md) — create an isolated environment for your ML project.
-4. [Start a Jupyter Server](./start-jupyter.md) — launch a managed development environment.
-5. [Upload data](./upload-data.md) — add datasets to object storage.
-6. [Prepare training code](./prepare-training-code.md) — write or upload the code that trains your model.
-7. [Run a training job](./run-training-job.md) — train your model on managed compute resources.
-8. [Register a model artifact](./register-artifact.md) — save the trained model for deployment.
-9. [Deploy the model](./deploy-model.md) — expose the model through an API endpoint.
-10. [Run inference](./run-inference.md) — send a request to the endpoint and get a prediction.
+- [Create account](./create-account.md)
 
 ## After you finish
 

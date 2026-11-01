@@ -6,9 +6,9 @@ This page describes the platform at a conceptual level. It explains the main com
 
 ## Main components
 
-### Billing account
+### Billing
 
-A billing account determines whether a user can create and use paid platform resources. Before creating a workspace, you must connect a payment method and ensure that the billing account is active.
+A billing arrangement determines whether a user can create and use paid platform resources. Before creating a workspace, a user must create an account and complete the billing setup required for the selected plan.
 
 ### Workspace
 
@@ -48,7 +48,7 @@ NeuroStack provides monitoring for deployed endpoints, covering endpoint health,
 
 ```mermaid
 graph TD
-    A[Billing account] --> B[Workspace]
+    A[Billing] --> B[Workspace]
     B --> C[Jupyter Server]
     B --> D[Object storage]
     B --> E[Training job]
@@ -58,11 +58,11 @@ graph TD
     H --> I[Monitoring]
 ```
 
-The billing account is the entry point for using paid resources. A workspace groups the resources needed for an ML project. Within a workspace, the Jupyter Server supports development, object storage holds data and artifacts, training jobs produce model artifacts, and endpoints expose deployed models for inference.
+The billing arrangement is the entry point for using paid resources. A workspace groups the resources needed for an ML project. Within a workspace, the Jupyter Server supports development, object storage holds data and artifacts, training jobs produce model artifacts, and endpoints expose deployed models for inference.
 
 ## Typical workflow
 
-1. Create-account and connect a payment method.
+1. Create an account and complete billing setup.
 2. Create a workspace in a selected region.
 3. Start a Jupyter Server and prepare your data and training code.
 4. Run a training job.
@@ -89,8 +89,6 @@ The full list of supported regions and availability zones is not yet defined.
 ## Access control
 
 NeuroStack uses role-based access control (RBAC) at the workspace level. Each user has a workspace role — Owner, Admin, Editor, or Viewer — that applies to all resources within the workspace.
-
-Permission inheritance and per-resource overrides are not supported. See [Access control](../concepts/access-control.md) for details.
 
 ## Scope of this overview
 

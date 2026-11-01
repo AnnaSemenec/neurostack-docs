@@ -22,16 +22,12 @@ NeuroStack is a cloud platform that enables data scientists and ML engineers to:
 ## Documentation
 
 - [Overview](docs/overview/index.md) — platform overview, architecture, and resource hierarchy
-- [Getting Started](docs/getting-started/index.md) — step-by-step onboarding from billing setup to your first model inference
-- [Concepts](docs/concepts/index.md) — deep dives into workspace, Jupyter, training jobs, models, and endpoints
-- [Tutorials](docs/tutorials/index.md) — hands-on walkthroughs for complete ML workflows
-- [How-to Guides](docs/how-to/index.md) — quick answers for specific tasks like uploading data or deploying a model
-- [Reference](docs/reference/index.md) — API endpoints, CLI commands, quotas, and error codes
-- [Troubleshooting](docs/troubleshooting/index.md) — fix common errors in billing, workspace, Jupyter, training, and deployment
-- [Best Practices](docs/best-practices/index.md) — production-ready patterns for security, cost optimization, and monitoring
-- [FAQ](docs/faq/index.md) — quick answers to frequently asked questions
-- [Release Notes](docs/release-notes/index.md) — what's new, changed, or deprecated in each version
-- [Glossary](docs/glossary.md) — ML and cloud terminology explained
+- [Getting Started](docs/getting_started/index.md) — step-by-step onboarding from billing setup to your first model inference
+- [Concepts](docs/concepts.md) — deep dives into workspace, Jupyter, training jobs, models, and endpoints
+- [How-to Guides](docs/how_to_guides.md) — quick answers for specific tasks like uploading data or deploying a model
+- [Reference](docs/api_reference.md) — API endpoints, CLI commands, quotas, and error codes
+- [Troubleshooting](docs/troubleshooting.md) — fix common errors in billing, workspace, Jupyter, training, and deployment
+- [FAQ](docs/faq/faq.md) — quick answers to frequently asked questions
 
 ---
 

@@ -1,18 +1,16 @@
 # Resource hierarchy
 
-NeuroStack organizes project resources around workspaces. A billing account must be active before you can create a workspace and use paid resources.
+NeuroStack organizes project resources around workspaces. A user must create an account and complete the billing setup required for the selected plan before creating a workspace and using paid resources.
 
 Understanding this hierarchy helps you identify where a resource belongs and which settings and permissions apply to it.
 
-## Billing account
+## Billing
 
-The billing account is a prerequisite for creating workspaces and using paid resources.
+A billing arrangement connects a user account or organization to payment for NeuroStack resources. NeuroStack supports three billing arrangements: card, invoice, and internal billing code.
 
-It has its own billing status and payment method. An inactive or suspended billing account restricts access to paid operations.
+A corporate organization has a single corporate billing arrangement linked to a single agreement with NeuroStack. Employee accounts are linked to the organization's corporate billing.
 
-NeuroStack does not currently define an organization-level resource; the billing account is the top-level container for platform resources.
-
-See [Billing account](../concepts/billing-account.md) for details.
+The billing status determines whether a user can create and use paid resources. See [Billing](../concepts/billing.md) for details.
 
 ## Workspace
 
@@ -23,12 +21,11 @@ A workspace includes:
 - compute resources;
 - object storage;
 - user permissions;
-- billing;
 - project settings.
 
 A workspace is created in a specific region. Workspace quotas depend on the billing plan.
 
-See [Workspace](../concepts/workspace.md) and [Region](../concepts/region.md) for details.
+See [Workspace](../concepts/workspace.md) for details.
 
 ## Resources within a workspace
 
@@ -49,15 +46,14 @@ These components support the ML workflow from development through deployment and
 
 ```mermaid
 graph TD
-    A[Billing account] --> B[Workspace]
-    B --> C[Compute resources]
+    A[Billing] --> B[Workspace]
+    B --> C[Jupyter Server]
     B --> D[Object storage]
-    B --> E[User permissions]
-    B --> F[Project settings]
-    C --> C1[Jupyter Server]
-    C --> C2[Training jobs]
-    D --> D1[Datasets]
-    D --> D2[Model artifacts]
+    B --> E[Training job]
+    E --> F[Model artifact]
+    F --> G[Endpoint]
+    G --> H[Inference]
+    H --> I[Monitoring]
 ```
 
 The ML workflow follows these stages:
@@ -78,7 +74,7 @@ The diagrams are conceptual. They show the main resource relationships and workf
 
 Workspace roles apply to all resources within the workspace, including Jupyter Servers, training jobs, model artifacts, and endpoints.
 
-Permissions cannot be changed for individual resources. See [Access control](../concepts/access-control.md) for details.
+Permissions cannot be changed for individual resources.
 
 ## Resource limits
 
@@ -91,15 +87,13 @@ Workspace and Jupyter Server quotas depend on the billing plan.
 | Pro | 20 | 10 |
 | Enterprise | Custom | Custom |
 
-Other resource quotas may also depend on the plan. See [Quotas](../reference/quotas.md) for the applicable limits.
+Other resource quotas may also depend on the plan.
 
 ## Related documentation
 
-- [Billing account](../concepts/billing-account.md)
+- [Billing](../concepts/billing.md)
 - [Workspace](../concepts/workspace.md)
 - [Jupyter Server](../concepts/jupyter-server.md)
 - [Training job](../concepts/training-job.md)
 - [Model artifact](../concepts/artifact.md)
 - [Endpoint](../concepts/endpoint.md)
-- [Region](../concepts/region.md)
-- [Access control](../concepts/access-control.md)

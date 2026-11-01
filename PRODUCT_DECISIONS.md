@@ -1,12 +1,15 @@
 # Product Decisions
 
 **Last updated:** October 2026
+**Status:** Archived
 
 This document records product decisions, assumptions, and constraints made while developing the fictional NeuroStack product model.
 
 NeuroStack is a portfolio project. Some product details are intentionally simplified or defined specifically to support the documentation exercise.
 
 When a detail is not defined here or in the product documentation, it should not be treated as established product behavior.
+
+The decisions recorded here reflect the product model as it stood when the documentation was written. The project was later wound down, and this decision to close the project was the final product decision. The document is preserved as a record of the decisions made during the documentation exercise.
 
 ---
 

@@ -17,19 +17,19 @@ The platform provides managed development environments, compute resources, objec
 
 ## Get started
 
-Follow the [Getting Started](../getting-started/index.md) guide to set up billing, create your first workspace, and run your first inference request.
+Follow the [Getting Started](../getting_started/index.md) guide to set up billing, create your first workspace, and run your first inference request.
 
 ## How the platform works
 
 A typical ML workflow starts with a workspace, where you prepare data and develop training code in a Jupyter environment. You then run a training job, register the resulting model artifact, and deploy the model to an endpoint. Once the endpoint is available, you can send inference requests and monitor its operation.
 
-Before creating a workspace, you must create-account, connect a payment method, and ensure that the billing account is active.
+Before creating a workspace, you must create an account.
 
 ## Explore the documentation
 
-- [Platform architecture](./platform-architecture.md) — understand the main platform components and how they relate to one another.
-- [Resource hierarchy](./resource-hierarchy.md) — learn how NeuroStack organizes billing accounts, workspaces, and resources.
-- [Getting Started](../getting-started/index.md) — follow the onboarding workflow from billing setup to your first inference request.
+- [Platform architecture](./platform_architecture.md) — understand the main platform components and how they relate to one another.
+- [Resource hierarchy](./resource_hierarchy.md) — learn how NeuroStack organizes billing accounts, workspaces, and resources.
+- [Getting Started](../getting_started/index.md) — follow the onboarding workflow from billing setup to your first inference request.
 - [Concepts](../concepts/index.md) — learn about the platform's resources and terminology.
 
 ## Access the platform

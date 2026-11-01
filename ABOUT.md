@@ -39,14 +39,12 @@ The documentation was then developed in iterations:
 The documentation set includes:
 
 - product overview and architecture;
-- onboarding and end-to-end ML workflows;
-- concepts and terminology;
-- tutorials and task-oriented how-to guides;
-- API and CLI reference;
-- troubleshooting and error documentation;
-- best practices and release notes.
+- onboarding and billing setup;
+- core concepts and terminology.
 
 The project focuses on information architecture, user-oriented technical writing, documentation consistency, and Docs-as-Code workflows.
+
+The original scope also included how-to guides, API/CLI reference, troubleshooting, best practices, and release notes; these are not covered in the current version.
 
 ---
 
