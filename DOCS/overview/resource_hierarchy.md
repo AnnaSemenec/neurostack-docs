@@ -92,8 +92,3 @@ Other resource quotas may also depend on the plan.
 ## Related documentation
 
 - [Billing](../concepts/billing.md)
-- [Workspace](../concepts/workspace.md)
-- [Jupyter Server](../concepts/jupyter-server.md)
-- [Training job](../concepts/training-job.md)
-- [Model artifact](../concepts/artifact.md)
-- [Endpoint](../concepts/endpoint.md)
